@@ -80,6 +80,7 @@ app.post('/api/register', async (req, res) => {
     });
 
     await user.save();
+    console.log('User saved to DB :', user)
     
     res.status(201).json({
       success: true,
