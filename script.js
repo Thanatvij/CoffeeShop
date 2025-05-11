@@ -60,7 +60,17 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
     alert(`Thank you! ${email} has been subscribed to our newsletter.`);
     this.reset();
 });
+// Hero Image Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
+function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+setInterval(showNextSlide, 5000); // เปลี่ยนภาพทุก 5 วินาที
 // Scroll Animation
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
