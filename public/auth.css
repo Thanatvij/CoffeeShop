@@ -1,212 +1,174 @@
-.auth-section {
-    padding: 120px 0 80px;
-    min-height: calc(100vh - 300px);
-    display: flex;
-    align-items: center;
-}
+/* Auth Pages Styling */
 
-.auth-container {
+/* Auth Section */
+.auth-section {
+    padding: 80px 0;
+    background-color: #f8f5f2;
+  }
+  
+  /* Auth Container */
+  .auth-container {
     display: flex;
-    background-color: #ffffff;
+    flex-direction: row;
+    width: 100%;
+    max-width: 900px;
+    min-height: 600px;
+    margin: 0 auto;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.auth-image {
+  }
+  
+  /* Auth Image */
+  .auth-image {
     flex: 1;
-    background-color: #e6dbd1;
-    min-height: 500px;
+    background-color: #4a3520;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.auth-form-container {
-    flex: 1;
+    min-height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .auth-image .placeholder-text {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Auth Form Container */
+  .auth-form-container {
+    flex: 1.2;
     padding: 40px;
-}
-
-.auth-subtitle {
-    color: #666;
+  }
+  
+  .auth-subtitle {
+    color: #6c757d;
     margin-bottom: 30px;
-}
-
-.auth-form {
-    width: 100%;
-}
-
-.form-group {
+  }
+  
+  /* Auth Form */
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
     margin-bottom: 20px;
-}
-
-.form-group label {
+  }
+  
+  .form-group label {
     display: block;
-    margin-bottom: 5px;
-    color: #5c3d2e;
+    margin-bottom: 8px;
+    color: #4a3520;
     font-weight: 500;
-}
-
-.form-group input {
+  }
+  
+  .form-group input {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 16px;
     transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-    border-color: #b85c38;
+  }
+  
+  .form-group input:focus {
+    border-color: #7d6245;
     outline: none;
-}
-
-.form-checkbox {
+  }
+  
+  /* Checkbox styles */
+  .form-checkbox {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.form-checkbox input {
+    align-items: flex-start;
+  }
+  
+  .form-checkbox input[type="checkbox"] {
     width: auto;
     margin-right: 10px;
-}
-
-.form-checkbox label {
-    display: inline;
+    margin-top: 4px;
+  }
+  
+  .form-checkbox label {
+    flex: 1;
     margin-bottom: 0;
-}
-
-.forgot-password {
-    color: #b85c38;
+  }
+  
+  .forgot-password {
+    color: #7d6245;
     text-decoration: none;
-}
-
-.forgot-password:hover {
+    margin-left: auto;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #4a3520;
     text-decoration: underline;
-}
-
-.auth-submit-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #b85c38;
-    color: #ffffff;
+  }
+  
+  /* Submit Button */
+  .auth-submit-btn {
+    background-color: #4a3520;
+    color: white;
     border: none;
+    padding: 14px;
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-.auth-submit-btn:hover {
-    background-color: #8f4629;
-}
-
-.auth-alt {
-    margin-top: 20px;
-    text-align: center;
-    color: #666;
-}
-
-.auth-alt a {
-    color: #b85c38;
-    text-decoration: none;
-}
-
-.auth-alt a:hover {
-    text-decoration: underline;
-}
-
-.auth-btn.active {
-    font-weight: 700;
-}
-
-/* Responsive styles */
-@media (max-width: 900px) {
-    .auth-container {
-        flex-direction: column;
-    }
-    
-    .auth-image {
-        min-height: 200px;
-    }
-}
-
-/* Add these styles to your auth.css file */
-
-/* Authentication Messages */
-.auth-message {
-    padding: 12px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    text-align: center;
-}
-
-.auth-message.success {
-    background-color: rgba(76, 175, 80, 0.2);
-    color: #2e7d32;
-    border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.auth-message.error {
-    background-color: rgba(244, 67, 54, 0.2);
-    color: #d32f2f;
-    border: 1px solid rgba(244, 67, 54, 0.3);
-}
-
-.user-greeting {
-    margin-right: 15px;
-    color: #5c3d2e;
     font-weight: 500;
-}
+    margin-top: 10px;
+  }
+  
+  .auth-submit-btn:hover {
+    background-color: #5c4530;
+  }
+  
+  /* Auth Alternatives */
+  .auth-alt {
+    margin-top: 25px;
+    text-align: center;
+    color: #6c757d;
+  }
+  
+  .auth-alt a {
+    color: #7d6245;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .auth-alt a:hover {
+    color: #4a3520;
+    text-decoration: underline;
+  }
+  
+  /* Active state for auth buttons in header */
+  .auth-btn.active {
+    background-color: #4a3520;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .auth-container {
+      flex-direction: column;
+      min-height: auto;
+      margin: 20px;
+    }
 
-.logout-btn {
-    color: #b85c38;
-    border: 1px solid #b85c38;
-    background-color: transparent;
-}
+    .auth-image {
+      min-height: 250px;
+      padding: 30px;
+    }
 
-.logout-btn:hover {
-    background-color: rgba(184, 92, 56, 0.1);
-}
-
-.auth-submit-btn:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-
-.form-group input:invalid:focus {
-    border-color: #f44336;
-}
-
-.form-group input:valid:focus {
-    border-color: #4caf50;
-}
-
-.password-strength {
-    height: 5px;
-    margin-top: 5px;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-.password-strength.weak {
-    background-color: #f44336;
-    width: 33%;
-}
-
-.password-strength.medium {
-    background-color: #ff9800;
-    width: 66%;
-}
-
-.password-strength.strong {
-    background-color: #4caf50;
-    width: 100%;
-}
+    .auth-form-container {
+      padding: 30px 20px;
+    }
+  }
