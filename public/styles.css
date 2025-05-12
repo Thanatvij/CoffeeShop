@@ -29,6 +29,8 @@ header {
     z-index: 100;
 }
 
+
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -38,13 +40,19 @@ header {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
+    
 }
 
 .logo a {
     color: #5c3d2e;
     text-decoration: none;
     font-weight: bold;
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
 }
+
 
 .logo a:hover {
     color: #b85c38;
@@ -163,18 +171,18 @@ nav ul li a:hover {
   .hero-dot {
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 40%;
+    margin: 0 3px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .hero-dot.active {
-    background-color: #fff;
+    background-color: #ffffff5e;
     width: 12px;
     height: 12px;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.11);
   }
   
   /* Responsive adjustments */
@@ -200,19 +208,55 @@ nav ul li a:hover {
 }
 
 .about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .about-img {
-    flex: 1;
-    height: 400px;
-    background-color: #e6dbd1;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex: 1;
+  height: 400px;
+  background-color: #e6dbd1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #e6dbd1;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #5d4037;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d7c8bb;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
 }
 
 .about-text {
