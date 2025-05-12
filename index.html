@@ -4,28 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PTT Élan Café | Specialty Coffee</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="auth.js">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="container header-content">
-      <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">PTT Élan Café</a></div>
+      <div class="logo">PTT Élan Café</div>
       <nav>
         <div class="mobile-menu">☰</div>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#menu">Menu</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="auth-buttons">
-          <a href="login.html" class="auth-btn login-btn">Login</a>
-          <a href="register.html" class="auth-btn register-btn">Register</a>
-        </div>
       </nav>
     </div>
   </header>
@@ -33,9 +28,10 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-slider">
-      <div class="slide active" style="background-image: url('/assets/image1.PNG');"></div>
-      <div class="slide" style="background-image: url('/assets/image3.PNG');"></div>
+      <div class="slide active" style="background-image: url('assets/image1.PNG');"></div>
+      <div class="slide" style="background-image: url('assets/image3.PNG');"></div>
     </div>
+   
   </section>
 
   <!-- About Section -->
@@ -50,6 +46,33 @@
         <p>We carefully select beans from sustainable farms around the world, roast them to perfection in small batches, and prepare each cup with precision and care.</p>
         <p>Our cozy space is designed to be your haven—a place to relax, connect, work, or simply enjoy the moment with a delicious cup of coffee.</p>
         <a href="#" class="btn" style="margin-top: 20px;">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header">
+        <h2 class="section-title">Our Menu</h2>
+        <p>Crafted with love and expertise, our menu offers something for every coffee lover.</p>
+      </div>
+      <div class="menu-categories">
+        <div class="menu-category active" data-category="coffee">Coffee</div>
+        <div class="menu-category" data-category="food">Food</div>
+        <div class="menu-category" data-category="desserts">Desserts</div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div class="menu-item-img">
+            <div class="placeholder-text">Espresso image</div>
+          </div>
+          <div class="menu-item-content">
+            <h3 class="menu-item-title">Espresso</h3>
+            <div class="menu-item-price">$3.50</div>
+            <p class="menu-item-desc">Our signature espresso blend with notes of chocolate and caramel.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -98,7 +121,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3><a href="index.html" style="text-decoration: none; color: inherit;">PTT Élan Café</a></h3>
+          <h3>PTT Élan Café</h3>
           <p>Artisanal coffee for the soul.</p>
           <div class="social-links">
             <a href="#" class="social-link">FB</a>
@@ -111,7 +134,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#menu">Menu</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>

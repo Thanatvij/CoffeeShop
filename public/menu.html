@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Menu | PTT Élan Café</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html">PTT Élan Café</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="index.html#location">Location</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header">
+        <h2 class="section-title">Our Menu</h2>
+        <p class="menu-subtitle">A curated selection of classic French café delights</p>
+      </div>
+
+      <div class="menu-categories">
+        <div class="menu-category active" data-category="all">All</div>
+        <div class="menu-category" data-category="Beverage">Beverages</div>
+        <div class="menu-category" data-category="desserts">Desserts</div>
+      </div>
+
+      <div class="menu-items">
+        <!-- Beverage Items -->
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/latte.jpg" alt="Café Crème" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Café Crème</h3>
+              <div class="menu-item-price">€3.50</div>
+            </div>
+            <p class="menu-item-desc">French-style espresso with steamed cream for a rich, smooth taste.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/espresso.jpg" alt="Espresso" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Espresso</h3>
+              <div class="menu-item-price">€3.25</div>
+            </div>
+            <p class="menu-item-desc">A short, concentrated shot of espresso full of aroma and body.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/Café au Lait .jpg" alt="Café au Lait" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Café au Lait</h3>
+              <div class="menu-item-price">€4.00</div>
+            </div>
+            <p class="menu-item-desc">Equal parts brewed coffee and warm milk, served in a bowl like in Paris.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/Chocolat Chaud.jpg" alt="Chocolat Chaud" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Chocolat Chaud</h3>
+              <div class="menu-item-price">€4.50</div>
+            </div>
+            <p class="menu-item-desc">Decadent hot chocolate made with real dark chocolate and milk.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/Café Glacé.jpg" alt="Café Glacé" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Café Glacé</h3>
+              <div class="menu-item-price">€4.25</div>
+            </div>
+            <p class="menu-item-desc">Iced coffee served chilled with a splash of milk.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="Beverage">
+          <div class="menu-item-img"><img src="/assets/affogato.jpg" alt="Affogato" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Affogato</h3>
+              <div class="menu-item-price">€5.00</div>
+            </div>
+            <p class="menu-item-desc">Espresso poured over a scoop of vanilla ice cream – simple and indulgent.</p>
+          </div>
+        </div>
+
+        <!-- Dessert Items -->
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/macarons.jpg" alt="Macarons" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Macarons</h3>
+              <div class="menu-item-price">€4.25</div>
+            </div>
+            <p class="menu-item-desc">Almond meringue cookies with rich ganache—colorful, crisp, and soft inside.</p>
+          </div>
+        </div>
+        
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/panna-cotta.jpg" alt="Panna Cotta" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Panna Cotta</h3>
+              <div class="menu-item-price">€4.75</div>
+            </div>
+            <p class="menu-item-desc">Silky vanilla cream topped with berry coulis or caramel.</p>
+          </div>
+        </div>
+        
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/creme-brulee.jpg" alt="Crème Brûlée" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Crème Brûlée</h3>
+              <div class="menu-item-price">€4.95</div>
+            </div>
+            <p class="menu-item-desc">Custard base with a crunchy caramelized sugar top.</p>
+          </div>
+        </div>
+        
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/eclair.jpg" alt="Éclair au Chocolat" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Éclair au Chocolat</h3>
+              <div class="menu-item-price">€3.95</div>
+            </div>
+            <p class="menu-item-desc">Choux pastry filled with cream and topped with chocolate icing.</p>
+          </div>
+        </div>
+        
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/tarte-tatin.jpg" alt="Tarte Tatin" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Tarte Tatin</h3>
+              <div class="menu-item-price">€5.50</div>
+            </div>
+            <p class="menu-item-desc">Upside-down tart of caramelized apples—served warm.</p>
+          </div>
+        </div>
+        
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img"><img src="/assets/millefeuille.jpg" alt="Mille-feuille" /></div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Mille-feuille</h3>
+              <div class="menu-item-price">€5.95</div>
+            </div>
+            <p class="menu-item-desc">Layers of puff pastry and vanilla cream, topped with fondant glaze.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PTT Élan Café. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>  
+    document.addEventListener('DOMContentLoaded', function () {
+      const defaultCategory = document.querySelector('.menu-category[data-category="all"]');
+      if (defaultCategory) defaultCategory.click();
+    });
+  </script>
+</body>
+</html>
