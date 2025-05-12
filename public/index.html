@@ -5,7 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PTT Élan Café | Specialty Coffee</title>
   <link rel="stylesheet" href="./styles.css" />
-  <script src="auth.js" defer></script>
+  <link rel="stylesheet" href="auth.js">
+  <style>
+    .hero-slider {
+      position: relative;
+    }
+    .hero-slider-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
@@ -30,13 +47,33 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-slider">
-      <div class="slide active" style="background-image: url('/assets/image1.PNG');"></div>
-      <div class="slide" style="background-image: url('/assets/image3.PNG');"></div>
+<!-- Hero Section with Professional Navigation Controls -->
+<section class="hero" id="home">
+  <div class="hero-slider">
+    <div class="slide active" style="background-image: url('./assets/image1.PNG');"></div>
+    <div class="slide" style="background-image: url('./assets/image3.PNG');"></div>
+    <div class="slide" style="background-image: url('./assets/IMG.PNG');"></div>
+    
+    <!-- Professional Slider Navigation -->
+    <div class="hero-controls">
+      <button id="prevSlideBtn" class="hero-slider-btn prev-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="hero-dots">
+        <span class="hero-dot active" data-index="0"></span>
+        <span class="hero-dot" data-index="1"></span>
+        <span class="hero-dot" data-index="2"></span>
+      </div>
+      <button id="nextSlideBtn" class="hero-slider-btn next-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- About Section -->
   <section class="about" id="about">
@@ -54,6 +91,7 @@
     </div>
   </section>
 
+ 
   <!-- Location Section -->
   <section class="location" id="location">
     <div class="container location-content">
@@ -111,7 +149,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#menu">Menu</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
