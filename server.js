@@ -5,6 +5,9 @@ const cors = require('cors');
 const bcrypt = require('@node-rs/bcrypt');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
+const jwt = require('jsonwebtoken');  // Add JWT
+const helmet = require('helmet');      // Add Helmet for security headers
+const rateLimit = require('express-rate-limit'); // Add Rate Limiting
 
 dotenv.config();
 
@@ -14,6 +17,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public')); // Serve static files
+
+// Add security middlewares
+app.use(helmet()); // Set security headers
+
+// Rate limiting to prevent brute-force attacks
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+app.use(limiter); // Apply rate limiting globally
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
@@ -26,6 +39,23 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Create User model
 const User = require('./models/User');
 const Subscriber = require('./models/Subscriber');
+
+// Middleware for protecting routes
+const authenticateJWT = (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', ''); // Get token from Authorization header
+  if (!token) {
+    return res.status(401).json({ message: 'Access denied. No token provided.' });
+  }
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: 'Invalid token.' });
+    }
+    req.user = user;
+    next();
+  });
+};
+
 // Routes
 // Register endpoint
 app.post('/api/register', async (req, res) => {
@@ -92,7 +122,14 @@ app.post('/api/login', async (req, res) => {
       });
     }
 
-    // Send successful response 
+    // Generate JWT token
+    const token = jwt.sign(
+      { id: user._id, username: user.username },
+      process.env.JWT_SECRET, 
+      { expiresIn: '1h' } // Token expires in 1 hour
+    );
+
+    // Send successful response with the token
     res.status(200).json({
       success: true,
       message: 'Login successful',
@@ -101,7 +138,8 @@ app.post('/api/login', async (req, res) => {
         username: user.username,
         email: user.email,
         fullName: user.fullName
-      }
+      },
+      token, // Send the token in the response
     });
   } catch (error) {
     console.error('Login error:', error);
@@ -112,10 +150,11 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+// Subscribe endpoint (no authentication required here)
 app.post('/api/subscribe', async (req, res) => {
   const { email } = req.body;
 
-  console.log('Received email for subscription:', email);a
+  console.log('Received email for subscription:', email);
 
   if (!email) {
     return res.status(400).json({ success: false, message: 'Email is required' });
@@ -156,6 +195,11 @@ app.post('/api/subscribe', async (req, res) => {
     console.error('Subscription error:', error);
     res.status(500).json({ success: false, message: 'Subscription failed' });
   }
+});
+
+// Protected route example
+app.get('/api/protected', authenticateJWT, (req, res) => {
+  res.send('This is a protected route');
 });
 
 app.listen(PORT, () => {
