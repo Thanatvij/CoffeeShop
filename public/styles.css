@@ -437,14 +437,14 @@ footer {
 .auth-buttons {
     display: flex;
     gap: 10px;
-    margin-left: 30px;
+    margin-right: 5px;
 }
 
 .auth-btn {
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 0px 9px;
+    border-radius: 9px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     transition: all 0.3s;
 }
 
