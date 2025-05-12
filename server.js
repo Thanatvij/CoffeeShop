@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('@node-rs/bcrypt');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 

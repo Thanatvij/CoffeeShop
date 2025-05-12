@@ -85,18 +85,18 @@ nav ul li a:hover {
     justify-content: center;
     color: #fff;
     text-align: center;
-}
-
-.hero-slider {
+  }
+  
+  .hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-}
-
-.slide {
+  }
+  
+  .slide {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -104,17 +104,96 @@ nav ul li a:hover {
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
+  }
+  
+  .slide.active {
     opacity: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
+  }
+  
+  /* Professional Hero Controls */
+  .hero-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-slider-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 15px;
+  }
+  
+  .hero-slider-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .hero-slider-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .hero-slider-btn:focus {
+    outline: none;
+  }
+  
+  /* Dots Navigation */
+  .hero-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+  }
+  
+  .hero-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-dot.active {
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-slider-btn {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+    }
+    
+    .hero-dot.active {
+      width: 10px;
+      height: 10px;
+    }
+  }
 /* About Section */
 .about {
     padding: 100px 0;
