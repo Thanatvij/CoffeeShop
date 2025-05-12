@@ -88,3 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize any components or features that need to be set up on page load
     // For example, you could add an image carousel, animations, etc.
 });
+
+document.getElementById("newsletter-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const email = e.target.email.value;
+  
+    const res = await fetch("/send-newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+  
+    const data = await res.json();
+    alert(data.message);
+  });

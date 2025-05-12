@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
+const nodemailer = require('nodemailer');
 
 dotenv.config();
 
@@ -22,38 +23,10 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('Could not connect to MongoDB:', err));
 
-// Define User Schema
-const userSchema = new mongoose.Schema({
-  fullName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
-});
-
-// Pre-save hook to hash password
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
-  
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
-
-// compare password
-userSchema.methods.comparePassword = async function(candidatePassword) {
-  return bcrypt.compare(candidatePassword, this.password);
-};
-
 // Create User model
-const User = mongoose.model('User', userSchema);
-
+const User = require('./models/User');
+const Subscriber = require('./models/Subscriber');
 // Routes
-
 // Register endpoint
 app.post('/api/register', async (req, res) => {
   try {
@@ -136,6 +109,52 @@ app.post('/api/login', async (req, res) => {
       success: false,
       message: 'An error occurred during login'
     });
+  }
+});
+
+app.post('/api/subscribe', async (req, res) => {
+  const { email } = req.body;
+
+  console.log('Received email for subscription:', email);a
+
+  if (!email) {
+    return res.status(400).json({ success: false, message: 'Email is required' });
+  }
+
+  try {
+    // Check if already subscribed
+    const existing = await Subscriber.findOne({ email });
+    if (existing) {
+      return res.status(400).json({ success: false, message: 'Email already subscribed' });
+    }
+
+    // Save to DB
+    const subscriber = new Subscriber({ email });
+    await subscriber.save();
+    console.log('Subscriber saved:', subscriber);
+
+    // Send confirmation email
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
+      }
+    });
+
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: email,
+      subject: 'Thanks for subscribing!',
+      text: 'You are now subscribed to our company newsletter. Stay tuned for updates!',
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ success: true, message: 'Subscribed and email sent!' });
+  } catch (error) {
+    console.error('Subscription error:', error);
+    res.status(500).json({ success: false, message: 'Subscription failed' });
   }
 });
 
