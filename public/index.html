@@ -10,7 +10,6 @@
   <title>PTT Élan Café | Specialty Coffee</title>
   <link rel="stylesheet" href="./styles.css" />
   <script src="./js/auth-serverside.js"></script>
-
 </head>
 <body>
 
@@ -36,32 +35,37 @@
     </div>
   </header>
 
-<section class="hero" id="home">
-  <div class="hero-slider">
-    <div class="slide active" style="background-image: url('./assets/image1.PNG');"></div>
-    <div class="slide" style="background-image: url('./assets/image3.PNG');"></div>
-    <div class="slide" style="background-image: url('./assets/IMG.PNG');"></div>
-    
+  <section class="hero" id="home">
+    <div class="hero-slider">
+      <div class="slide active" style="background-image: url('./assets/image1.PNG');"></div>
+      <div class="slide" style="background-image: url('./assets/image3.PNG');"></div>
+      <div class="slide" style="background-image: url('./assets/IMG.PNG');"></div>
   
-    <div class="hero-controls">
-      <button id="prevSlideBtn" class="hero-slider-btn prev-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="hero-dots">
-        <span class="hero-dot active" data-index="0"></span>
-        <span class="hero-dot" data-index="1"></span>
-        <span class="hero-dot" data-index="2"></span>
+      <div class="hero-controls">
+
+        <div class="button-row">
+          <button id="prevSlideBtn" class="hero-slider-btn prev-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+  
+          <button id="nextSlideBtn" class="hero-slider-btn next-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+  
+        <div class="hero-dots">
+          <span class="hero-dot active" data-index="0"></span>
+          <span class="hero-dot" data-index="1"></span>
+          <span class="hero-dot" data-index="2"></span>
+        </div>
       </div>
-      <button id="nextSlideBtn" class="hero-slider-btn next-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
     </div>
-  </div>
-</section>
+  </section>
+  
 
 <section class="about" id="about">
   <div class="container about-content">
@@ -85,7 +89,7 @@
         <h2 class="section-title">Visit Us</h2>
         <div class="location-detail">
           <h3>Address</h3>
-          <p>123 Coffee Street, Brewville, CA 90210</p>
+          <p>248 หมู่ที่ 2 ถนน ถนน ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง Pong Yang Khok, Hang Chat District, Lampang 52190</p>
         </div>
         <div class="location-detail">
           <h3>Hours</h3>
@@ -95,12 +99,13 @@
         <div class="location-detail">
           <h3>Contact</h3>
           <p>Phone: (555) 123-4567</p>
-          <p>Email: hello@brewhaven.com</p>
+          <p>Email: ptt.elancafe@gmail.com</p>
         </div>
         <a href="#contact" class="btn" style="margin-top: 20px; color: black">Contact Us</a>
       </div>
       <div class="location-map">
-       <img src="./assets/tulp-map.png" alt="PTT Élan Café pin map"/>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3787.65434423232!2d99.39671287467334!3d18.31740888273721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d96f264a1dd1f9%3A0xf0346c6d9b33150!2sThammasat%20University%20Lampang%20Campus!5e0!3m2!1sen!2sth!4v1747156720420!5m2!1sen!2sth" 
+         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-image"></iframe>
       </div>
     </div>
   </section>

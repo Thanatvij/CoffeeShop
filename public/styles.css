@@ -91,17 +91,13 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
     text-align: center;
   }
   
   .hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    z-index: 0;
   }
   
   .slide {
@@ -122,35 +118,26 @@ nav ul li a:hover {
   .hero-controls {
     position: absolute;
     bottom: 40px;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   
-.hero-slider {
-    position: relative;
-}
-.hero-slider-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.85);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-  
-  
+  .button-row {
+    display: flex;
+    gap: 1100px; 
+    margin-bottom: 250px;
+  }
+
   .hero-slider-btn {
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(5px);
     border: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -158,14 +145,19 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #ffffff;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(185, 182, 182, 0);
-    margin: 0 15px;
   }
-  
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+
   .hero-slider-btn:hover {
-    background-color: rgba(255, 255, 255, 0.233);
+    background-color: rgba(255, 255, 255, 0.054);
     transform: scale(1.05);
   }
   
@@ -178,19 +170,17 @@ nav ul li a:hover {
   }
   
   /* Dots Navigation */
-  .hero-dots {
+  
+.hero-dots {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 15px;
+    gap: 8px;
   }
   
   .hero-dot {
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.048);
-    border-radius: 40%;
-    margin: 0 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -389,7 +379,6 @@ nav ul li a:hover {
     color: #666;
 }
 
-/* Location Section */
 .location {
   padding: 100px 0;
 }
@@ -397,16 +386,13 @@ nav ul li a:hover {
 .location-content {
   display: flex;
   gap: 50px;
-  flex-wrap: wrap; /* Added for better responsiveness */
+  flex-wrap: wrap; 
 }
 
 .location-map {
   flex: 1;
-  min-width: 300px; /* Ensures minimum width on smaller screens */
+  min-width: 300px;
   height: 400px;
-  background-color: #e6dbd1;
-  border-radius: 10px;
-  overflow: hidden; /* This prevents the image from spilling outside */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -415,12 +401,12 @@ nav ul li a:hover {
 .map-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This ensures the image covers the container properly */
+  object-fit: cover;
 }
 
 .location-info {
   flex: 1;
-  min-width: 300px; /* Ensures minimum width on smaller screens */
+  min-width: 300px; 
 }
 
 .location-detail {
