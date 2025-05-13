@@ -287,6 +287,24 @@ nav ul li a:hover {
     margin-bottom: 50px;
 }
 
+.section-title {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #5a3821;
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cormorant-title {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .menu-categories {
     display: flex;
     justify-content: center;
@@ -601,6 +619,15 @@ footer {
     color: #5c3d2e;
     border: 1px solid #5c3d2e;
     background-color: transparent;
+}
+.login-btn h2 {
+    color: #5c3d2e;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .login-btn:hover {
