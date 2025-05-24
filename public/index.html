@@ -10,6 +10,33 @@
   <title>PTT Élan Café | Specialty Coffee</title>
   <link rel="stylesheet" href="./styles.css" />
   <script src="./js/auth-serverside.js"></script>
+  <style>
+    .user-icon {
+      margin-left: 15px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .user-icon:hover {
+      background-color: rgba(139, 69, 19, 0.1);
+    }
+    
+    .user-icon svg {
+      width: 24px;
+      height: 24px;
+      color: #8B4513;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,6 +58,12 @@
       <div class="auth-buttons">
         <a href="login.html" class="auth-btn login-btn">Login</a>
         <a href="register.html" class="auth-btn register-btn">Register</a>
+        <a href="user.html" class="user-icon" title="User Profile">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </header>

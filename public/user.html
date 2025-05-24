@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>User Profile | PTT Élan Café</title>
+<link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="./user.css" />
+<script src="./js/auth-serverside.js"></script>
+<style>
+  .user-icon {
+    margin-left: 15px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-icon:hover {
+    background-color: rgba(139, 69, 19, 0.1);
+  }
+  
+  .user-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #8B4513;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container header-content">
+    <div class="logo"><a href="index.html">PTT Élan Café</a></div>
+    
+    <nav>
+      <div class="mobile-menu">☰</div>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="index.html#location">Location</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" class="auth-btn login-btn">Login</a>
+      <a href="register.html" class="auth-btn register-btn">Register</a>
+      <a href="user.html" class="user-icon" title="User Profile">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Profile Section -->
+<section class="profile-section">
+<div class="container">
+<div class="profile-container">
+<div class="profile-card">
+<div class="profile-avatar" id="userAvatar">JD</div>
+<div class="profile-name" id="userName">John Doe</div>
+<div class="profile-email" id="userEmail">john.doe@example.com</div>
+<button class="edit-profile-btn" onclick="toggleEditMode()">แก้ไขข้อมูล</button>
+</div>
+<div>
+<div class="points-container">
+<div class="points-title">คะแนนสะสม</div>
+<div class="points-value" id="userPoints">1,250</div>
+<div class="points-subtitle">Points</div>
+</div>
+</div>
+</div>
+<!-- Rewards Section -->
+<div class="rewards-section">
+<h2 class="section-title">🎁 แลกของรางวัล</h2>
+<div class="rewards-grid" id="rewardsGrid">
+<!-- Rewards will be populated by JavaScript -->
+</div>
+</div>
+<!-- Settings Section -->
+<div class="settings-section">
+<div class="settings-card">
+<h3 class="section-title">แก้ไขข้อมูลส่วนตัว</h3>
+<form id="profileForm">
+<div class="form-group">
+<label for="editName">ชื่อ-นามสกุล</label>
+<input type="text" id="editName" value="John Doe" disabled>
+</div>
+<div class="form-group">
+<label for="editEmail">อีเมล</label>
+<input type="email" id="editEmail" value="john.doe@example.com" disabled>
+</div>
+<div class="form-group">
+<label for="editPhone">เบอร์โทรศัพท์</label>
+<input type="tel" id="editPhone" value="081-234-5678" disabled>
+</div>
+<button type="button" class="save-btn" id="saveProfileBtn" onclick="saveProfile()" disabled>บันทึกข้อมูล</button>
+</form>
+</div>
+<div class="settings-card">
+<h3 class="section-title">เปลี่ยนรหัสผ่าน</h3>
+<form id="passwordForm">
+<div class="form-group">
+<label for="currentPassword">รหัสผ่านปัจจุบัน</label>
+<input type="password" id="currentPassword" placeholder="กรอกรหัสผ่านปัจจุบัน">
+</div>
+<div class="form-group">
+<label for="newPassword">รหัสผ่านใหม่</label>
+<input type="password" id="newPassword" placeholder="กรอกรหัสผ่านใหม่">
+</div>
+<div class="form-group">
+<label for="confirmPassword">ยืนยันรหัสผ่านใหม่</label>
+<input type="password" id="confirmPassword" placeholder="กรอกรหัสผ่านใหม่อีกครั้ง">
+</div>
+<button type="button" class="save-btn" onclick="changePassword()">เปลี่ยนรหัสผ่าน</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3><a href="index.html" style="text-decoration: none; color: inherit;">PTT Élan Café</a></h3>
+        <p>Artisanal coffee for the soul.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="index.html#location">Location</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>More Info</h3>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PTT Élan Café. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="user.js"></script>
+</body>
+</html>
