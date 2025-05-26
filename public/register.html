@@ -22,14 +22,18 @@
         <ul>
           <li><a href="index.html#home">Home</a></li>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#menu">Menu</a></li>
+          <li><a href="menu.html">Menu</a></li>
           <li><a href="index.html#location">Location</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="auth-buttons">
-        <a href="login.html" class="auth-btn login-btn">Login</a>
-        <a href="register.html" class="auth-btn register-btn active">Register</a>
+        <div id="user-section" style="display: none;">
+          <span id="username-display" style="margin-right: 10px;"></span>
+          <a href="logout.html" class="btn">Logout</a>
+        </div>
+        <a href="login.html" class="btn auth-btn login-btn">Login</a>
+        <a href="register.html" class="btn auth-btn register-btn">Register</a>
       </div>
     </div>
   </header>

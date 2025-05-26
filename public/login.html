@@ -22,14 +22,14 @@
         <ul>
           <li><a href="index.html#home">Home</a></li>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#menu">Menu</a></li>
+          <li><a href="menu.html">Menu</a></li>
           <li><a href="index.html#location">Location</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="auth-buttons">
-        <a href="login.html" class="auth-btn login-btn active">Login</a>
-        <a href="register.html" class="auth-btn register-btn">Register</a>
+        <a href="login.html" class="btn">Login</a>
+        <a href="register.html" class="btn">Register</a>
       </div>
     </div>
   </header>
@@ -112,7 +112,13 @@
     </div>
   </footer>
 
+</script>
   <script src="script.js"></script>
   <script src="fetch-login.js"></script>
+  <script>
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      window.location.href = 'menu.html';
+    });
+  </script>
 </body>
 </html>
