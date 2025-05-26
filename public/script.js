@@ -1,4 +1,3 @@
-// Document Ready Event
 document.addEventListener('DOMContentLoaded', function() {
     console.log('PTT Élan Café website loaded successfully!');
     
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make sure logo is clickable
     initializeLogoClickHandler();
   });
-  
+
   // Logo Click Handler
   function initializeLogoClickHandler() {
     const logoLinks = document.querySelectorAll('.logo a, .footer-column h3 a');

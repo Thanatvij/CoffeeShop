@@ -658,3 +658,9 @@ footer {
         padding: 10px 0;
     }
 }
+
+  #user-section {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }

@@ -10,6 +10,33 @@
   <title>PTT Élan Café | Specialty Coffee</title>
   <link rel="stylesheet" href="./styles.css" />
   <script src="./js/auth-serverside.js"></script>
+  <style>
+    .user-icon {
+      margin-left: 15px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .user-icon:hover {
+      background-color: rgba(139, 69, 19, 0.1);
+    }
+    
+    .user-icon svg {
+      width: 24px;
+      height: 24px;
+      color: #8B4513;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,10 +55,12 @@
         </ul>
       </nav>
       <div class="auth-buttons">
-        <a href="login.html" class="auth-btn login-btn">Login</a>
-        <a href="register.html" class="auth-btn register-btn">Register</a>
+        <div id="user-section" style="display: none;">
+          <span id="username-display" style="margin-right: 10px;"></span>
+          <a href="logout.html" class="btn">Logout</a>
+        </div>
+        <a href="login.html" class="btn" id="login-button">Login</a>
       </div>
-    </div>
   </header>
 
   <section class="hero" id="home">
@@ -159,5 +188,22 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/me', {
+          credentials: 'include'
+        });
+  
+        const data = await response.json();
+        if (data.loggedIn) {
+          document.getElementById('user-section').style.display = 'inline-block';
+          document.getElementById('username-display').textContent = data.username;
+        }
+      } catch (err) {
+        console.error('Error fetching session info:', err);
+      }
+    });
+  </script>
 </body>
 </html>

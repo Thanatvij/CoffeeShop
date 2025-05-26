@@ -1,2 +1,0 @@
-MONGODB_URI=mongodb+srv://premch:ARzuesHP1SnUP3r0@cluster0.ycor4ie.mongodb.net/userdb_store?retryWrites=true&w=majority
-PORT=3000
