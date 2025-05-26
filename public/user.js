@@ -390,3 +390,26 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("showQrBtn");
+  const qrDiv = document.getElementById("qrcodeContainer");
+  document.getElementById("showQrBtn").style.zIndex = 9999;
+document.getElementById("showQrBtn").style.position = "relative";
+  if (btn && qrDiv) {
+    btn.style.cursor = "pointer";
+    btn.style.pointerEvents = "auto";  // เพิ่มให้คลิกได้แน่นอน
+    btn.disabled = false;               // ปลดล็อกปุ่มถ้ามี disabled
+
+    btn.addEventListener("click", () => {
+      console.log("ปุ่มถูกคลิก!");
+      if (qrDiv.style.display === "none" || qrDiv.style.display === "") {
+        qrDiv.style.display = "block";
+      } else {
+        qrDiv.style.display = "none";
+      }
+    });
+  } else {
+    console.error("ไม่พบปุ่ม showQrBtn หรือ div qrcodeContainer");
+  }
+});

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<<head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Profile | PTT Élan Café</title>
@@ -55,6 +55,22 @@
     }
 
     .logout-btn:hover {
+      background-color: #5e351e;
+    }
+
+    .qrcode-btn {
+      margin-top: 10px;
+      background-color: #8B4513;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
+
+    .qrcode-btn:hover {
       background-color: #5e351e;
     }
   </style>
@@ -118,9 +134,16 @@
 </div>
 <div>
 <div class="points-container">
-<div class="points-title">คะแนนสะสม</div>
-<div class="points-value" id="userPoints">1,250</div>
-<div class="points-subtitle">Points</div>
+  <div class="points-title">คะแนนสะสม</div>
+  <div class="points-value" id="userPoints">1,250</div>
+  <div class="points-subtitle">Points</div>
+  
+  <button id="showQrBtn" class="qrcode-btn">แสดง QR Code</button>
+  
+  <div id="qrcodeContainer" style="display: none; margin-top: 15px;">
+    <img src="assets/qrcode.png" alt="QR Code สำหรับสะสมแต้ม" style="max-width: 200px;">
+  </div>
+</div>
 </div>
 </div>
 </div>
@@ -212,5 +235,16 @@
 </footer>
 
 <script src="user.js"></script>
+<script>
+  function toggleQRCode() {
+    console.log("toggleQRCode called");
+    const qr = document.getElementById("qrcodeContainer");
+    if (qr.style.display === "none") {
+      qr.style.display = "block";
+    } else {
+      qr.style.display = "none";
+    }
+  }
+</script>
 </body>
 </html>
